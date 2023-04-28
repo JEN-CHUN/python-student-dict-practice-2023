@@ -10,7 +10,7 @@ def subject_highest():
         print("以下為目前所有的科目")
         for subject in all_subject:
             print(subject)
-        subject = input("請輸入欲查詢的科目名稱(注意大小寫): ")
+        subject = input("請輸入欲查詢的科目名稱(注意大小寫):\n")
         if student_list != {}:
             score_list = []
 
@@ -72,7 +72,7 @@ def sorted_score():
 
 def add_student_input():
     while (True):
-        name = input(f'請輸入學生的姓名： ')
+        name = input(f'請輸入學生的姓名：\n')
         if name.strip() == "" :
             print("姓名欄位不能為空，請重新輸入")
             continue
@@ -87,7 +87,7 @@ def add_student_input():
 
                 while (True):
 
-                    score = input(f"請輸入{name}學生的{subject}成績:　")
+                    score = input(f"請輸入{name}學生的{subject}成績:\n")
 
                     
 
@@ -156,7 +156,7 @@ def search_student():
 
 while (init_turn < 6):
 
-    name = input(f'請輸入學生{init_turn+1}號的姓名： ')
+    name = input(f'請輸入學生{init_turn+1}號的姓名：\n')
     if name.strip() == "":
         print("姓名欄位不能為空，請輸入姓名")
         continue
@@ -171,7 +171,7 @@ while (init_turn < 6):
 
             while (True):
 
-                score = input(f"請輸入{name}學生的{subject}成績:　")
+                score = input(f"請輸入{name}學生的{subject}成績:\n")
 
                 if score.isnumeric():
                     if int(score) < 0 or int(score) > 100:
@@ -186,7 +186,7 @@ while (init_turn < 6):
 
 while (program_active):
     print("\n")
-    print("請選擇要執行的功能(請輸入對應的數字)：")
+    print("請選擇要執行的功能(請輸入對應的數字)：\n")
     print("(1)找出指定科目的最高分")
     print("(2)找出得最高平均分的學生資料")
     print("(3)從高至低列出學生姓名與平均分數")
