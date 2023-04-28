@@ -73,6 +73,9 @@ def sorted_score():
 def add_student_input():
     while (True):
         name = input(f'請輸入學生的姓名： ')
+        if name.strip() == "" :
+            print("姓名欄位不能為空，請重新輸入")
+            continue
         if name in student_list:
             print("學生姓名已存在，請重新輸入姓名")
             continue
@@ -86,7 +89,13 @@ def add_student_input():
 
                     score = input(f"請輸入{name}學生的{subject}成績:　")
 
+                    
+
                     if score.isnumeric():
+
+                        if int(score) < 0 or int(score) > 100:
+                            print("請輸入0-100之間的合理的正整數")
+                            continue
 
                         student_list[name].update({subject: int(score)})
                         break
@@ -145,9 +154,12 @@ def search_student():
         print("目前沒有並沒有任何學生的相關資料")
 
 
-while (init_turn < 2):
+while (init_turn < 6):
 
     name = input(f'請輸入學生{init_turn+1}號的姓名： ')
+    if name.strip() == "":
+        print("姓名欄位不能為空，請輸入姓名")
+        continue
     if name in student_list:
         print("學生姓名已存在，請重新輸入姓名")
         continue
@@ -162,6 +174,9 @@ while (init_turn < 2):
                 score = input(f"請輸入{name}學生的{subject}成績:　")
 
                 if score.isnumeric():
+                    if int(score) < 0 or int(score) > 100:
+                            print("請輸入0-100之間的合理的正整數")
+                            continue
 
                     student_list[name].update({subject: int(score)})
                     break
